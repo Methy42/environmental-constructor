@@ -53,5 +53,5 @@ jobs:
           server: ${{ secrets.CI_HOST_NAME }}
           username: ${{ secrets.CI_HOST_USERNAME }}
           password: ${{ secrets.CI_HOST_PASSWORD }}
-          local-dir: ${{ secrets.CI_HOST_TARGETDIR }}
-          server-dir: ${{ secrets.CI_HOST_DIR }}
+          local-dir: ./target/
+          server-dir: $GITHUB_REPOSITORY
