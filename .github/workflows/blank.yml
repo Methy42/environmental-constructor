@@ -34,7 +34,7 @@ jobs:
           echo test, and deploy your project.
 
       - name: Mysql ci
-        run: sh tools/mysql-8.0.28-linux-glibc2.17-x86_64-minimal/ci.sh
+        run: sudo sh tools/mysql-8.0.28-linux-glibc2.17-x86_64-minimal/ci.sh
 
       - name: Build resource
         run: tar -zcvf environmental-constructor.tar.gz ./resource
