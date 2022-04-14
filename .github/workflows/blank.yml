@@ -45,7 +45,7 @@ jobs:
         with:
           host: ${{ secrets.CI_HOST_NAME }}
           username: ${{ secrets.CI_HOST_USERNAME }}
-          passphrase: ${{ secrets.CI_HOST_PRIVATEKEY }}
+          key: ${{ secrets.CI_HOST_PRIVATEKEY }}
           port: ${{ secrets.CI_HOST_PORT }}
           source: "environmental-constructor.tar.gz"
           target: "environmental-constructor"
