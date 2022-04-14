@@ -28,10 +28,11 @@ jobs:
         run: echo Hello, world!
 
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: check env params
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          echo "GITHUB_ACTION_PATH: $GITHUB_ACTION_PATH",
+          echo "GITHUB_PATH: $GITHUB_PATH",
+          echo "GITHUB_EVENT_PATH: $GITHUB_EVENT_PATH".
 
       - name: Mysql ci
         run: sudo sh tools/mysql-8.0.28-linux-glibc2.17-x86_64-minimal/ci.sh
