@@ -1,7 +1,7 @@
 #!/bin/bash -x
 
 CURRENT_PATH=`pwd`
-RESOURCE_PATH=`cd ../../resource && pwd`
+RESOURCE_PATH=../../resource
 DOWNLOAD_URL=https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.28-linux-glibc2.17-x86_64-minimal.tar.xz
 TOOL_NAME=mysql-8.0.28
 
