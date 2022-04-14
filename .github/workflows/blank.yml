@@ -41,6 +41,11 @@ jobs:
         run: tar -zcvf environmental-constructor.tar.gz ./resource
 
       - name: Deploy 🚀
-        run: |
-          rm -rf ~/.ssh/known_hosts
-          scp environmental-constructor.tar.gz root@110.40.173.164:/root/
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.CI_HOST_NAME }}
+          username: ${{ secrets.CI_HOST_USERNAME }}
+          fingerprint: ${{ secrets.CI_HOST_PUBLICKEY }}
+          port: ${{ secrets.CI_HOST_PORT }}
+          source: "environmental-constructor.tar.gz"
+          target: "environmental-constructor"
