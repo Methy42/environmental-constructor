@@ -3,15 +3,13 @@
 name: CI
 
 # Controls when the workflow will run
-on:
+# on:
   # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  # push:
+  #   branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+  # workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -34,3 +32,12 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+      - name: Mysql ci
+        run: sh tools/mysql-8.0.28-linux-glibc2.17-x86_64-minimal/ci.sh
+
+      - name: Build resource
+        run: tar -zcvf environmental-constructor.tar.gz ./resource
+
+      - name: Deploy 🚀
+        run: scp environmental-constructor.tar.gz root@110.40.173.164:/root/
