@@ -41,4 +41,6 @@ jobs:
         run: tar -zcvf environmental-constructor.tar.gz ./resource
 
       - name: Deploy 🚀
-        run: scp environmental-constructor.tar.gz root@110.40.173.164:/root/
+        run: |
+          rm -rf ~/.ssh/known_hosts
+          scp environmental-constructor.tar.gz root@110.40.173.164:/root/
