@@ -3,7 +3,7 @@ echo "install $MYSQL_NAME"
 
 rm -rf $TARGET_PATH/$MYSQL_NAME
 mkdir $TARGET_PATH/$MYSQL_NAME
-tar -xvf $MYSQL_NAME.tar.xz -C $TARGET_PATH/$MYSQL_NAME/
+tar -xvf $MYSQL_NAME.tar.xz --strip-components 1 -C $TARGET_PATH/$MYSQL_NAME/
 
 echo "$MYSQL_NAME is installed"
 
